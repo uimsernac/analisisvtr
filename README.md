@@ -23,3 +23,19 @@ Este repositorio contiene el análisis de reclamos sobre la empresa VTR. Se incl
    ```bash
    git clone https://github.com/uimsernac/analisisvtr.git
    cd analisisvtr
+
+### Analisis iniciales 
+
+1. Se unen bases subtel 2019 - 2020 
+2. Se aplican filtros criterio subtel
+filter_criteria = ["CONTINUIDAD DE SERVICIO", "CONEXIONES A INTERNET", "VELOCIDAD DE INTERNET"]
+filtered_df = combined_df[combined_df['Tipo de Motivo'].isin(filter_criteria)]
+
+se analiza la cantidad unica de rut existentes en base filtrada = 4755
+
+proximos pasos:
+1. hacer un análisis de texto sobre columna combined_df['Glosa'] para evaluar si existen reclamos asociados a cortes de servicio mayor a 0 horas 
+2. volver a analizar la cantidad de ruts unicos -> posibles consumidores afectados 
+3. cruzar con bases de datos sernac para obtener listado único de consumidores afectados por cortes en VTR
+
+
